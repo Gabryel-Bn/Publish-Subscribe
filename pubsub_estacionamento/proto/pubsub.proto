@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package pubsub;
+
+// Pub/Sub simples: publica uma mensagem de texto em um tópico,
+// assinantes daquele tópico recebem via stream.
+service PubSubService {
+  rpc Publish(PublishRequest) returns (Ack);
+  rpc Subscribe(SubscribeRequest) returns (stream Notificacao);
+}
+
+message PublishRequest {
+  string topico = 1;
+  string mensagem = 2;
+}
+
+message Ack {
+  bool sucesso = 1;
+}
+
+message SubscribeRequest {
+  string topico = 1;
+}
+
+message Notificacao {
+  string topico = 1;
+  string mensagem = 2;
+}
