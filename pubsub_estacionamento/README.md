@@ -46,7 +46,7 @@ O terminal 2 vai mostrar a mensagem na hora. Para provar o isolamento por
 tópico, abram um 4º terminal com `python3 subscriber.py ZONA_B` e publiquem
 em `ZONA_B` — só esse assinante recebe.
 
-## Como o código funciona (para explicar em sala)
+## Como o código funciona
 
 1. **`.proto`** define 2 RPCs:
    - `Publish` — unária: cliente manda, servidor responde uma vez (Ack).
@@ -66,12 +66,3 @@ em `ZONA_B` — só esse assinante recebe.
    (igual ao trabalho anterior de vocês), só que um chama `Publish` e o
    outro consome o stream de `Subscribe`.
 
-## Checklist do que o professor pediu
-
-- [x] Pub/Sub implementado (gRPC, streaming RPC)
-- [x] Aplicação definida pelo grupo (alertas de vaga por zona)
-- [x] Testado e funcionando (rodei end-to-end: 2 assinantes em tópicos
-      diferentes, cada um recebeu só as mensagens do seu tópico)
-- [ ] Apresentar em sala executando o programa ao vivo (comandos acima)
-- [ ] Explicar o código (usem os 3 pontos da seção anterior)
-- [ ] Anexar o código / link do repositório (este zip já serve)
